@@ -2,10 +2,14 @@ from scipy.io import loadmat
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+
 def extract_capacity_fade(battery_name):
     mat = loadmat(f'data/{battery_name}.mat')
     data = mat[battery_name][0, 0]
     cycles = data['cycle'][0]
+    print(mat.keys())
+    print(data.dtype.names)
 
     capacities = []
     cycle_numbers = []
